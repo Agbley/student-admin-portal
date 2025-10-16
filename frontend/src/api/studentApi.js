@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000/api" });
+const API = axios.create({ baseURL: "https://student-admin-portal-qqji.onrender.com/api" });
 
 // Student CRUD
 export const fetchStudents = () => API.get("/students");
