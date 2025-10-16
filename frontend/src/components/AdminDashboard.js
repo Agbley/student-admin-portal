@@ -32,17 +32,17 @@ function AdminDashboard() {
   };
 
   const loadCourses = async () => {
-    const res = await axios.get("http://localhost:5000/api/courses");
+    const res = await axios.get("https://student-admin-portal-qqji.onrender.com/api/courses");
     setCourses(res.data);
   };
 
   const loadApplications = async () => {
-    const res = await axios.get("http://localhost:5000/api/applications");
+    const res = await axios.get("https://student-admin-portal-qqji.onrender.com/api/applications");
     setApplications(res.data);
   };
 
   const loadResults = async () => {
-    const res = await axios.get("http://localhost:5000/api/results");
+    const res = await axios.get("https://student-admin-portal-qqji.onrender.com/api/results");
     setResults(res.data);
   };
 
@@ -79,7 +79,7 @@ function AdminDashboard() {
   // COURSE ACTIONS
   // ----------------------------
   const handleAddCourse = async () => {
-    await axios.post("http://localhost:5000/api/courses", {
+    await axios.post("https://student-admin-portal-qqji.onrender.com/api/courses", {
       name: courseName,
       description,
     });
@@ -98,7 +98,7 @@ function AdminDashboard() {
       return;
     }
 
-    await axios.post("http://localhost:5000/api/results", {
+    await axios.post("https://student-admin-portal-qqji.onrender.com/api/results", {
       studentId: selectedStudent,
       courseId: selectedCourse,
       score: Number(score),
@@ -115,7 +115,7 @@ function AdminDashboard() {
   // ----------------------------
   const handleApprove = async (courseId, applicationId) => {
     await axios.put(
-      `http://localhost:5000/api/applications/${courseId}/${applicationId}/approve`
+      `https://student-admin-portal-qqji.onrender.com/api/applications/${courseId}/${applicationId}/approve`
     );
     loadApplications();
   };

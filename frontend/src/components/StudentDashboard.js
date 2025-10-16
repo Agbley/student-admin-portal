@@ -12,7 +12,7 @@ function StudentDashboard() {
   // -------------------------------
   const fetchStudent = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/students/me", {
+      const res = await axios.get("https://student-admin-portal-qqji.onrender.com/api/students/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStudent(res.data);
@@ -26,7 +26,7 @@ function StudentDashboard() {
   // -------------------------------
   const fetchCourses = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/courses");
+      const res = await axios.get("https://student-admin-portal-qqji.onrender.com/api/courses");
       setCourses(res.data);
     } catch (err) {
       console.error("Error fetching courses:", err);
@@ -39,7 +39,7 @@ function StudentDashboard() {
   const fetchResults = async (studentId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/results/student/${studentId}`
+        `https://student-admin-portal-qqji.onrender.com/api/results/student/${studentId}`
       );
       setResults(res.data);
     } catch (err) {
@@ -53,7 +53,7 @@ function StudentDashboard() {
   const applyToCourse = async (courseId) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/courses/${courseId}/apply`,
+        `https://student-admin-portal-qqji.onrender.com/api/courses/${courseId}/apply`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
